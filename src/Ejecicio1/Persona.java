@@ -1,26 +1,50 @@
 package Ejecicio1;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Persona {
 	private String dni;
 	private String nombre;
 	private String apellido;
+	private int edad;
 	private LocalDate fechaNacimiento;
 	private String genero;
 	private String direccion;
 	private String telefono;
 	private String email;
+
+	//Constructores
+
+	public Persona (){
+		this.nombre = "sin nombre";
+		this.edad = 99;
+	}
+
+	public Persona(String dni, String nombre, String apellido, LocalDate fechaNacimiento, String genero, String direccion, String telefono, String email){
+		this.dni = dni;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.edad = calcularEdad(fechaNacimiento);
+		this.fechaNacimiento = fechaNacimiento;
+		this.genero = genero;
+		this.direccion = direccion;
+		this.telefono = telefono;
+		this.email = email;
+	}
 	
 	// Metodos
 	
 	@Override
 	public String toString() {
-		return "Persona [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento="
+		return "Persona [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", fechaNacimiento="
 				+ fechaNacimiento + ", genero=" + genero + ", direccion=" + direccion + ", telefono=" + telefono
 				+ ", email=" + email + "]";
 	}
-	
+
+	private int calcularEdad(LocalDate fechaNacimiento) {
+		return Period.between(fechaNacimiento, LocalDate.now()).getYears();
+	}
 	
 	// Getters y Setters
 	public String getDni() {

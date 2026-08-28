@@ -18,5 +18,20 @@ public class Principal {
 
         System.out.println(emple.toString());
 
+        System.out.println("Persona:");
+        Persona persona = new Persona(
+                "12345678",
+                "Alejo",
+                "Martinez",
+                java.time.LocalDate.of(2004, 4, 12),
+                "Masculino",
+                "Calle Falsa 123",
+                "555-1234",
+                "ale@gmail.com");
+
+        System.out.println(persona.toString());
+
+        System.out.println(emple.toString());
+
     }
 }
