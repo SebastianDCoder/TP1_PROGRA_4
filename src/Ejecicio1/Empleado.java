@@ -41,7 +41,7 @@ public class Empleado extends Persona{
         this.puesto = puesto;
     }
 
-    //Metodo toString
+    //Metodos
 
     @Override
     public String toString() {
@@ -50,4 +50,9 @@ public class Empleado extends Persona{
                 ", puesto='" + puesto + '\'' +
                 '}';
     }
+
+    public static int devuelveProximoLegajo(){
+        return legajoCounter + 1;
+    }
+
 }

@@ -35,5 +35,7 @@ public class Principal {
 
         System.out.println(emple.toString());
 
+        System.out.println("Proximo legajo: " + emple.devuelveProximoLegajo());
+
     }
 }
